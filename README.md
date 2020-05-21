@@ -51,6 +51,7 @@
    - 例如：select * from 表名 where username = '" + username +      "' and password = '" + password + "'"
    - 这样的语句出现在代码中十分危险，用户的输入没有经过任何的过滤，假如输入的username是2'or'1=1，password是2'or'1=1，那么无须知道正确的用户名和密码也能成功登录进网站，这就是所谓的万能用户，配合盲注、报错注入等技巧，甚至可以获取数据库中所有的信息
    - 用prepareStatement对输入数据进行预编译，用prepareStatement不但可以避免sql语句拼接的问题，还能因为其预处理的能力大幅提升执行效率
+        - 原理：当运行时动态地把参数传给PreprareStatement时，不管参数里有什么，都会作为一个字段的值来处理，保证data永远是data，而不会变成可执行的code，这样子就杜绝了SQL注入的问题
 
 3. 使用框架附带的数据库操作方法
 
