@@ -29,7 +29,7 @@ select * from emp where ename not like '%R%';
  * */	
 select * from emp order by ename asc;
 /*
- * ÅÅÐò:  µ¹Ðð
+ * ÅÅÐò:  µ¹Ðò
  *   
  * */	
 select * from emp order by ename desc;
